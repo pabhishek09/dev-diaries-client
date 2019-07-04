@@ -5,7 +5,7 @@ import TerminalWindow from '../components/terminal-window/TerminalWindow';
 const Playground = () => {
   return (
     <div className='playground'>
-      <h1>Playground</h1>
+      <h1>Playground!</h1>
       <CodeEditor/>
       <TerminalWindow/>
     </div>
