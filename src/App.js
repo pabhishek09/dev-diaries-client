@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Playground from './playground/Playground';
 
 function App() {
   return (
-    <div className="">
+    <div className="container">
       <Playground/>
     </div>
   );

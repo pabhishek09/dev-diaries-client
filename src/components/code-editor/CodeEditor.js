@@ -13,8 +13,7 @@ const handleCodeChange = (editor, data, value) => {
 
 const CodeEditor = () => {
   return (
-    <div className='terminal-window'>
-      <h1>Code Editor</h1>
+    <div className='col-md-6 code-editor'>
       <CodeMirror
         value='function main() {}'
         options={{

@@ -5,16 +5,7 @@ const showMsg = () => 'Hello World'
 
 const TerminalWindow = () => {
   return (
-    <div className='terminal-window'>
-      <h1>Terminal window</h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh"
-        }}
-      >
+    <div className='col-md-6-terminal-window'>
         <Terminal watchConsoleLogging
           color='green'
           backgroundColor='black'
@@ -32,7 +23,6 @@ const TerminalWindow = () => {
           }}
           msg='You can write anything here. Example - Hello! My name is Foo and I like Bar.'
         />
-      </div>
     </div>
   )
 }
