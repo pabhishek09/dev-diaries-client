@@ -1,27 +1,23 @@
 import React from 'react';
 import Terminal from 'terminal-in-react';
-
-const showMsg = () => 'Hello World'
+import { commands, description, commandPassThrough, msg, style } from './TerminalWindowConfig';
+import './TerminalWindow.css';
 
 const TerminalWindow = () => {
+
   return (
-    <div className='col-md-6-terminal-window'>
-        <Terminal watchConsoleLogging
-          color='green'
-          backgroundColor='black'
+    <div className='col-md-6 terminal-window'>
+        <Terminal 
+          watchConsoleLogging
+          commandPassThrough={commandPassThrough}
+          hideTopBar
+          color='#EDEDED'
+          backgroundColor='#263238'
           barColor='black'
-          style={{ fontWeight: "bold", fontSize: "1em" }}
-          commands={{
-            'open-google': () => window.open('https://www.google.com/', '_blank'),
-            showmsg: showMsg,
-            popup: () => alert('Terminal in React')
-          }}
-          descriptions={{
-            'open-google': 'opens google.com',
-            showmsg: 'shows a message',
-            alert: 'alert', popup: 'alert'
-          }}
-          msg='You can write anything here. Example - Hello! My name is Foo and I like Bar.'
+          style={style}
+          commands={commands}
+          descriptions={description}
+          msg={msg}
         />
     </div>
   )
