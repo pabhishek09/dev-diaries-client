@@ -5,7 +5,10 @@ import './Playground.css';
 
 const Playground = () => {
   return (
-    <div className='row playground-container'>
+    <div className='row playground'>
+      <div className='col-md-12 options-bar'>
+        <p>Run</p>
+      </div>
       <CodeEditor/>
       <TerminalWindow/>
     </div>
