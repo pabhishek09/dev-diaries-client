@@ -5,15 +5,16 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import './CodeEditor.css';
 
-const handleCodeChange = (editor, data, value) => {
+const CodeEditor = (props) => {
 
-}
+  const handleCodeChange = (editor, data, value) => {
+    props.onCodeChange(value);
+  };
 
-const CodeEditor = () => {
   return (
     <div className='col-md-6 code-editor'>
       <CodeMirror
-        value='function main() {}'
+        value={props.code}
         options={{
           mode: 'javascript',
           theme: 'material',
@@ -22,6 +23,6 @@ const CodeEditor = () => {
         onChange={handleCodeChange}/>
     </div>
   )
-}
+};
 
 export default CodeEditor;
