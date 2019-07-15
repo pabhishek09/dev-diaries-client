@@ -9,8 +9,9 @@ const dev = {
 const prod = {
   apiBaseUrl: 'https://dev-diaries.herokuapp.com/api/'
 }
-
+console.log('STAGE', process.env.STAGE);
 const envConfig = process.env.STAGE === 'prod' ? prod: dev;
+console.log(envConfig);
 
 const Config = { Common, ...envConfig };
 
