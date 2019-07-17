@@ -1,0 +1,14 @@
+.full-height{
+  height:100%;
+}
+// .code-editor .react-codemirror2, .code-editor .react-codemirror2 .CodeMirror {
+//   height: 100%;
+// }
+.code-editor{
+  .react-codemirror2{
+    @extend .full-height;
+    .CodeMirror{
+      @extend .full-height;
+    }
+  }
+}

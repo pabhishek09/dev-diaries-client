@@ -1,19 +1,14 @@
-import React from 'react';
-import './App.css';
-import Playground from './playground/Playground';
-import Http from './utils/http.util';
+import React, { Component } from 'react';
 
-function App() {
+import Routes from './router';
+import './App.scss';
 
-  Http.get({endpoint: 'status'}).then((data) => { console.log("API is up") });
-
-  return (
-    <div className="container">
-      <Playground/>
-    </div>
-  );
-};
-
-
-
-export default App;
+export default class App extends Component {
+  render() {
+    return (
+      <div className="appHeight">
+        <Routes />
+      </div>
+    )
+  }
+}

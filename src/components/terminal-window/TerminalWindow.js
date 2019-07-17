@@ -1,7 +1,9 @@
 import React from 'react';
+
 import Terminal from 'terminal-in-react';
 import { description, commandPassThrough, msg, style } from './TerminalWindowConfig';
-import './TerminalWindow.css';
+
+import './TerminalWindow.scss';
 
 const TerminalWindow = (props) => {
 
