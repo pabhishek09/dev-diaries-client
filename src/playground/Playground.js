@@ -1,10 +1,12 @@
 import React from 'react';
+
 import Challenge from './Challenge';
 import OptionsBar from '../components/options-bar/OptionsBar';
 import CodeEditor from '../components/code-editor/CodeEditor';
 import TerminalWindow from '../components/terminal-window/TerminalWindow';
 import { execute, evaluate } from '../utils/playground.util';
-import './Playground.css';
+
+import './Playground.scss';
 
 
 const Playground = () => {

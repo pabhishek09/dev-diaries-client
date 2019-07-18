@@ -1,0 +1,15 @@
+.appHeader{
+    background-color: gray;
+    padding: 15px;
+    .navLinkClass{
+        color: black;
+        text-decoration: none;
+        margin: 10px;
+        font-size: 20px;
+    }
+    .active{
+        text-decoration: underline;
+        text-decoration-color: darkslategrey;
+        text-underline-position:under;
+    }
+}

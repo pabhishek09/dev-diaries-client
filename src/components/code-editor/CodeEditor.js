@@ -3,7 +3,8 @@ import { UnControlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
-import './CodeEditor.css';
+
+import './CodeEditor.scss';
 
 const CodeEditor = (props) => {
 
