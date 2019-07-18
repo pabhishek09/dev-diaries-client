@@ -1,15 +1,12 @@
 import React from 'react';
-
 import Challenge from './Challenge';
-import OptionsBar from '../components/options-bar/OptionsBar';
-import CodeEditor from '../components/code-editor/CodeEditor';
-import TerminalWindow from '../components/terminal-window/TerminalWindow';
-import { execute, evaluate } from '../utils/playground.util';
+import OptionsBar from '../options-bar/OptionsBar';
+import CodeEditor from '../code-editor/CodeEditor';
+import TerminalWindow from '../terminal-window/TerminalWindow';
+import { execute, evaluate } from '../../utils/playground.util';
+import './AttemptProblem.scss';
 
-import './Playground.scss';
-
-
-const Playground = () => {
+const AttemptProblem = () => {
 
   let codeEditorState;
   const problem = Challenge.problems[0];
@@ -41,7 +38,7 @@ const Playground = () => {
   };
 
   return (
-    <div className='row playground'>
+    <div className='row attempt-problem'>
       <OptionsBar run={run} submit={submit}/>
       <CodeEditor code={defaultCode} onCodeChange={handleCodeChange}/>
       <TerminalWindow submit={submit}/>
@@ -49,4 +46,4 @@ const Playground = () => {
   )
 };
 
-export default Playground;
+export default AttemptProblem;
