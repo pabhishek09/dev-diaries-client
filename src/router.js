@@ -13,7 +13,7 @@ import ErrorComponent from './views/errorRoute/error';
 export const history = createBrowserHistory();
 const Routes = () => {
     return (
-        <div >
+        <div className="appHeight router-container-div">
             <Router history={history}>
             {window.location.pathname !== '/login' && <HeaderComp/>}
                 <Switch>
@@ -25,7 +25,7 @@ const Routes = () => {
                     <Redirect from="/" to="/profile"></Redirect>
                     <Route component={ErrorComponent}></Route>
                 </Switch>
-                <FooterComp></FooterComp>
+                {/* <FooterComp></FooterComp> */}
             </Router>
         </div>
     )

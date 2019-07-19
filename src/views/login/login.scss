@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+.img-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-div {
+  background-color: $bg-color;
+  height:100%;
+  flex-direction: column;
+  justify-content: center;
+  .login-logo {
+    width: auto;
+    height: 354px;
+    object-fit: contain;
+  }
+  .sign-in-img{
+    width: auto;
+    height: 92px;
+  }
+}
+
+.img-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

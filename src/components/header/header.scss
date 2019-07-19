@@ -1,6 +1,15 @@
+@import "../../variables.scss";
 .appHeader{
-    background-color: gray;
+    background-color:$bg-color;
     padding: 15px;
+    .dev-diaries-logo{
+        width: auto;
+        height: 56px;
+    }
+    .user-img{
+        width:56px;
+        height:56px;
+    }
     .navLinkClass{
         color: black;
         text-decoration: none;
