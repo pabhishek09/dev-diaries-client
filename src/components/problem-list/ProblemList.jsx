@@ -14,8 +14,8 @@ export default class ProblemList extends Component {
       <ListGroup>
       {_map(this.props.problems, (problem, index) => {
         return( <ListGroup.Item key={index}>
-        <NavLink to={`/playground/${this.props.challengeId}/${problem._id}`}>{problem.name}</NavLink>
-        <p>{problem.desc}</p>
+        <NavLink className="problem-link" to={`/playground/${this.props.challengeId}/${problem._id}`}>{problem.name}</NavLink>
+        <p className="problem-desc-text">{problem.desc}</p>
         </ListGroup.Item>)
       })}
     </ListGroup>

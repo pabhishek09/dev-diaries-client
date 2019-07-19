@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.problem-desc-text{
+    font-size:16px;
+    font-weight: normal;
+    color:$bg-color;
+    opacity:0.5;
+}
+.problem-link{
+    color:$github-link;
+    font-weight: bold;
+    font-size:20px;
+}

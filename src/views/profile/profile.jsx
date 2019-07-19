@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { UserProvider } from '../../userDetails';
-
+import ChallengesList from '../../components/challenges-list/ChallengesList';
 import HeaderComp from '../../components/header/header';
 import UserComp from '../../components/userComp/userComp'
 import './profile.scss'
@@ -37,14 +36,14 @@ export default class ProfileComponent extends Component {
 
     render() {
         return (<div>
-            <UserProvider value={this.state.userDetails}>
-                <HeaderComp userDetails={this.state.userDetails} />
+            
+                <HeaderComp/>
                 <div className="row no-side-margin">
                     <div className="offset-sm-2 col-sm-8">
                         <UserComp userDetails={this.state.userDetails}></UserComp>
+                        <ChallengesList challenges={this.state.allChallenges}/>
                     </div>
                 </div>
-            </UserProvider>
         </div>
 
         );
