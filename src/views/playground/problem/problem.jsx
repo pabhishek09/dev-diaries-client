@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import AttemptProblem from '../../../components/attempt-problem/AttemptProblem';
 import Http from '../../../utils/http.util';
+import _find from 'lodash/find';
 import './problem.scss';
 
 export default class ProblemComponent extends Component {
   constructor(props) {
     super();
+    this.state = {
+      problemDetails: {}
+    }
   }
 
   async componentDidMount () {
@@ -14,13 +18,16 @@ export default class ProblemComponent extends Component {
   }
 
   async getProblemDetails(challengeId, problemId) {
-    const endpoint = `playground/${challengeId}/${problemId}`;
-    Http.get({endpoint: 'status'}).then((data) => { console.log('API is up') });
+    const challengeDetailEndpoint = `playground/challenge/${challengeId}`;
+    Http.get({endpoint: challengeDetailEndpoint}).then((data) => { 
+      this.setState({problemDetails: _find(data.problems, (problem) => problem._id === problemId)});
+      console.log('a', this.state.problemDetails);
+    });
   }
 
   render() {
     return (
-      <AttemptProblem/>
+      <AttemptProblem problemDetails={this.state.problemDetails}/>
     );
   }
 }

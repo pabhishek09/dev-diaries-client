@@ -24,10 +24,8 @@ export default class ChallengeComponent extends Component {
   render() {
     return (
       <div className="col-sm-12">
-        <h1 className="text-center"> All Challenges</h1>
         <ChallengesList challenges={this.state.allChallenges}/>
       </div>
     );
   }
 };
-
