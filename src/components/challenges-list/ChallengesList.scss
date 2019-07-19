@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+.challengelist-parent{
+    .accordion{
+        .card{
+            border-top : none !important;
+            border-left:none !important;
+            border-right:none !important;
+            border-bottom:1px solid rgba(61,72,77,0.1) !important;
+            background-color: white !important;
+            .card-header{
+                background-color:white !important;
+                border:none !important;
+            }
+            .list-group-item{
+                border:none !important;
+            }
+        }
+    }
+    .chip-score-img{
+        width:95px;
+        height:95px;
+    }
+    .challenge-name-text{
+        font-size: 18px;
+        font-weight: bold;
+        color:$bg-color;
+    }
+    .count-text{
+        font-size: 30px;
+        font-weight: normal;
+        color:white;
+        right: 66px;
+        position: relative;
+        top:5px;
+    }
+}
