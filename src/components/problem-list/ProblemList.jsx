@@ -17,9 +17,11 @@ export default class ProblemList extends Component {
       {this.props.problems.map((problem, index) => {
         return( <ListGroup.Item key={index}>
         <NavLink to={`/playground/${this.props.challengeId}/${problem._id}`}>{problem.name}</NavLink>
+        <p>{problem.desc}</p>
         </ListGroup.Item>)
       })}
     </ListGroup>
     );
   }
-}
+};
+

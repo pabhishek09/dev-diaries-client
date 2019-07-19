@@ -1,4 +1,6 @@
 import * as Babel from '@babel/standalone/babel.min';
+import _reduce from 'lodash/reduce';
+import _forEach from 'lodash/forEach';
 
 const transpileCode = (str) => {
   let transpiledCode;
@@ -43,4 +45,32 @@ const getFunctionFromSnippet = function(snippet) {
   return new Function(snippet);
 }
 
-export { evaluate, execute };
+const getFnDefaultCode = (fnSignature) => {
+  let fnParamsDoc = '';
+  _forEach(fnSignature.params, (param, index) => {
+    fnParamsDoc = fnParamsDoc.concat(`* @param {${param.type}}  ${param.name}  ${param.desc}`);
+    if (fnSignature.params.length !== (index + 1)) {
+      fnParamsDoc = fnParamsDoc.concat('\n');
+    }
+  });
+  const commentedDoc = 
+`/**
+${fnParamsDoc}
+*/
+`;
+  const fnParamsSignature = _reduce(fnSignature.params, (paramSig, param, index) => {
+    let accumulatedSig = paramSig + param.name;
+    if (fnSignature.params.length !== (index + 1)) {
+      accumulatedSig = accumulatedSig.concat(', ');
+    }
+    return accumulatedSig;
+  }, "");
+  const fnCode = `
+function ${fnSignature.fnName} (${fnParamsSignature}) {
+
+}
+  `;
+  return commentedDoc.concat(fnCode);
+}
+
+export { evaluate, execute, getFnDefaultCode };

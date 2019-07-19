@@ -17,7 +17,8 @@ export default class ChallengesList extends Component {
       <ListGroup>
       {this.props.challenges.map((challenge, index) => {
         return( <ListGroup.Item key={index}>
-          {challenge.name}
+          <p>{challenge.name}</p>
+          <p>{challenge.desc}</p>
           <ProblemList challengeId={challenge._id} problems={challenge.problems}/>
         </ListGroup.Item>)
       })}
