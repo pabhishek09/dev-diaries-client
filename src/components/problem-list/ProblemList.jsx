@@ -9,9 +9,6 @@ export default class ProblemList extends Component {
     super();
   }
 
-  componentDidMount () {
-  }
-
   render() {
     return (
       <ListGroup>
@@ -25,4 +22,3 @@ export default class ProblemList extends Component {
     );
   }
 };
-

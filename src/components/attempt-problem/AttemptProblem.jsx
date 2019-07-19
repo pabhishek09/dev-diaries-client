@@ -18,7 +18,6 @@ export default class AttemptProblem extends Component {
   componentWillReceiveProps(nextProps) {
     problemDetails = nextProps.problemDetails;
     defaultCode = getFnDefaultCode(problemDetails.signature);
-    console.log(defaultCode);
   }
 
   handleCodeChange (codeValue) {
