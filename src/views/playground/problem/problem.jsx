@@ -14,14 +14,13 @@ export default class ProblemComponent extends Component {
 
   async componentDidMount () {
     const { challengeId, problemId } = this.props.match.params;
-    const challengeDetails = await this.getProblemDetails(challengeId, problemId);
+    await this.getProblemDetails(challengeId, problemId);
   }
 
   async getProblemDetails(challengeId, problemId) {
     const challengeDetailEndpoint = `playground/challenge/${challengeId}`;
     Http.get({endpoint: challengeDetailEndpoint}).then((data) => { 
       this.setState({problemDetails: _find(data.problems, (problem) => problem._id === problemId)});
-      console.log('a', this.state.problemDetails);
     });
   }
 
