@@ -19,7 +19,7 @@ const Routes = () => {
                     <Route path="/forum" exact component={ForumComponent}></Route>
                     <Route path="/playground" exact component={ChallengeComponent}></Route>
                     <Route path="/playground/:challengeId/:problemId" exact component={ProblemComponent}></Route>
-                    <Redirect from="/" to="/profile"></Redirect>
+                    <Redirect from="/" to="/login"></Redirect>
                     <Route component={ErrorComponent}></Route>
                 </Switch>
             </Router>
