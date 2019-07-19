@@ -34,6 +34,7 @@ export default class UserComp extends Component {
                             <img src={require('../../assets/chip.png')} className="chip-img" alt="chip-logo" />
                             <span className="user-score">{userDetails.playgroundProfile.score}</span>
                             <img src={require('../../assets/gold-badge.png')} className="badge-img" alt="chip-logo" />
+                            <span className="user-score">{userDetails.playgroundProfile.level}</span>
                         </div>
                         ]
                     }
