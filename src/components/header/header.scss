@@ -1,15 +1,24 @@
+@import "../../variables.scss";
 .appHeader{
-    background-color: gray;
+    background-color:$bg-color;
     padding: 15px;
+    .dev-diaries-logo{
+        width: auto;
+        height: 56px;
+    }
+    .user-img{
+        width:56px;
+        height:56px;
+        border-radius: 30px;
+    }
     .navLinkClass{
-        color: black;
+        color:white;
         text-decoration: none;
         margin: 10px;
-        font-size: 20px;
+        font-size: 24px;
     }
     .active{
-        text-decoration: underline;
-        text-decoration-color: darkslategrey;
-        text-underline-position:under;
+        border-bottom: 2px solid $header-text-decoration;
+        padding-bottom: 5px;
     }
 }
