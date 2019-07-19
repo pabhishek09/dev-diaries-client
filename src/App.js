@@ -6,7 +6,7 @@ import './App.scss';
 export default class App extends Component {
   render() {
     return (
-      <div className="appHeight">
+      <div className="full-height">
         <Routes />
       </div>
     )

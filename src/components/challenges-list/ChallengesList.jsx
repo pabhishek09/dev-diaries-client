@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
+import './ChallengesList.scss';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ProblemList from '../problem-list/ProblemList';
-import { NavLink } from 'react-router-dom';
-import './ChallengesList.scss';
+import _map from 'lodash/map';
 
 export default class ChallengesList extends Component {
   constructor(props) {
     super();
   }
 
-  componentDidMount () {
-  }
-
   render() {
     return (
       <ListGroup>
-      {this.props.challenges.map((challenge, index) => {
+      {_map(this.props.challenges, (challenge, index) => {
         return( <ListGroup.Item key={index}>
           <p>{challenge.name}</p>
           <p>{challenge.desc}</p>

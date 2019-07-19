@@ -13,7 +13,6 @@ export default class ChallengeComponent extends Component {
 
   async componentDidMount() {
     await this.getAllChallenges().then((data) => this.setState({allChallenges: data}));
-    console.log(this.state.allChallenges);
   };
 
   async getAllChallenges() {
