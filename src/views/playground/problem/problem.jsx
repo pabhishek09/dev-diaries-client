@@ -3,7 +3,7 @@ import AttemptProblem from '../../../components/attempt-problem/AttemptProblem';
 import Http from '../../../utils/http.util';
 import _find from 'lodash/find';
 import './problem.scss';
-
+let challengeIdentifier;
 export default class ProblemComponent extends Component {
   constructor(props) {
     super();
@@ -14,6 +14,7 @@ export default class ProblemComponent extends Component {
 
   async componentDidMount () {
     const { challengeId, problemId } = this.props.match.params;
+    challengeIdentifier = challengeId;
     await this.getProblemDetails(challengeId, problemId);
   }
 
@@ -26,7 +27,7 @@ export default class ProblemComponent extends Component {
 
   render() {
     return (
-      <AttemptProblem problemDetails={this.state.problemDetails}/>
+      <AttemptProblem challengeId={challengeIdentifier} problemDetails={this.state.problemDetails}/>
     );
   }
 }

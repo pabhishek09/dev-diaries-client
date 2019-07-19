@@ -28,13 +28,14 @@ const evaluate = (code, name, expectations) => {
     const wrapperFn = getFunctionFromSnippet(transpiledCode.concat(returnFnSnippet));
     const fnInstance = wrapperFn();
     expectations.forEach((expectation) => {
-      const output = fnInstance.apply(null, expectation.arg);
-      if (expectation.ret === output) {
-        console.log('Test case passed for', expectation.arg);
+      const output = fnInstance.apply(null, expectation.args);
+      if (expectation.return === output) {
+        console.log('Test case passed for', expectation.args);
       } else {
-        console.log('Test case failed for', expectation.arg);
+        console.log('Test case failed for', expectation.args);
       }
     });
+    return 20;
   } catch (error) {
     console.log(error);
   }

@@ -12,17 +12,11 @@ const Http = {
     return res.data;
   }, 
   
-  post: ({endpoint, data}) => {
+  post: async ({endpoint, body}) => {
     let url = apiBaseUrl + endpoint;
-    console.log(url);
-    return axios.post(url);
-  }, 
-  
-  put: ({endpoint, data}) => {
-    let url = apiBaseUrl + endpoint;
-    console.log(url);
-    return axios.put(url);
-
+    console.log(url, body);
+    const res = await axios.post(url, body);
+    return res.data;
   }
 };
 
