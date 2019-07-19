@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './ChallengesList.scss';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
 import ProblemList from '../problem-list/ProblemList';
 import _map from 'lodash/map';
 

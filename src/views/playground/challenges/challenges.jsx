@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Http from '../../../utils/http.util';
 import ChallengesList from '../../../components/challenges-list/ChallengesList';
 import HeaderComp from '../../../components/header/header';
-import UserComp from '../../../components/userComp/userComp';
 import './challenges.scss'
 
 export default class ChallengeComponent extends Component {
