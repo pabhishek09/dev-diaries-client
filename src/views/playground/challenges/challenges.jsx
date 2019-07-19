@@ -1,22 +1,33 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import Http from '../../../utils/http.util';
+import ChallengesList from '../../../components/challenges-list/ChallengesList';
 import './challenges.scss'
-
 
 export default class ChallengeComponent extends Component {
   constructor() {
       super();
       this.state = {
+        allChallenges: []
       }
   }
-  
+
+  async componentDidMount() {
+    await this.getAllChallenges().then((data) => this.setState({allChallenges: data}));
+    console.log(this.state.allChallenges);
+  };
+
+  async getAllChallenges() {
+    const allChallengesEndpoint = `playground/challenges`;
+    return await Http.get({endpoint: allChallengesEndpoint});
+  };
+
   render() {
-    let challengeId='12344';
     return (
       <div className="col-sm-12">
         <h1 className="text-center"> All Challenges</h1>
-        <NavLink to={`/playground/challenges/${challengeId}`} params={{ challengeId: challengeId }}> click here to navigate to the challenges detail</NavLink>
+        <ChallengesList challenges={this.state.allChallenges}/>
       </div>
     );
   }
-}
+};
+
