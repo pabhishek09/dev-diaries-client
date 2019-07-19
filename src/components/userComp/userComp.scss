@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.user-profile-img{
+    height: 96px;
+    width: 96px;
+    border-radius: 50px;
+}
+.user-name{
+    font-size: 40px;
+    padding-bottom: 6px;
+    margin-bottom: 0px;
+}
+.user-github-link{
+    display: block;
+    margin-bottom:15px;
+    color:$github-link;
+}
+.chip-img{
+    width:27px;
+    height:27px;
+}
+.badge-img{
+    width:28px;
+    height: 28px;
+}
+.user-score{
+    display: inline-block;
+    padding-left:10px;
+    padding-right: 10px;
+}

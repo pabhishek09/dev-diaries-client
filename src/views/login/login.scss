@@ -1,9 +1,5 @@
 @import "../../variables.scss";
-.img-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .login-div {
   background-color: $bg-color;
   height:100%;
@@ -17,6 +13,7 @@
   .sign-in-img{
     width: auto;
     height: 92px;
+    cursor: pointer;
   }
 }
 
