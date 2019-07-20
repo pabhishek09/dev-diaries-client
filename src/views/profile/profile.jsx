@@ -15,7 +15,6 @@ export default class ProfileComponent extends Component {
 
   componentDidMount() {
     let githubAuthCode = window.location.href.split("?")[1];
-    let userProfile = getProfile();
     let finalAuthCode = githubAuthCode ? githubAuthCode.split("=")[1] : null;
 
     if (finalAuthCode) {
@@ -36,7 +35,6 @@ export default class ProfileComponent extends Component {
       window.location.replace("/login");
     }
   };
-
 
   render() {
     return (
