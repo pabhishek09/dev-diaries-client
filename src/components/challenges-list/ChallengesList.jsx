@@ -17,7 +17,7 @@ export default class ChallengesList extends Component {
         <Accordion>
           {_map(this.props.challenges, (challenge, index) => {
             return (
-              <Card>
+              <Card key={index}>
                 <Card.Header>
                   <Accordion.Toggle
                     as={Card.Header}
@@ -29,7 +29,7 @@ export default class ChallengesList extends Component {
                       })
                     }
                   >
-                    <div className="row no-side-margins">
+                    <div className="row">
                       <div className="col-sm-2">
                         <img
                           src={require("../../assets/chip.png")}
@@ -64,15 +64,6 @@ export default class ChallengesList extends Component {
           })}
         </Accordion>
       </div>
-      // <ListGroup>
-      //   {_map(this.props.challenges, (challenge, index) => {
-      //     return (<ListGroup.Item key={index}>
-      //       <p>{challenge.name}</p>
-      //       <p>{challenge.desc}</p>
-      //       <ProblemList challengeId={challenge._id} problems={challenge.problems} />
-      //     </ListGroup.Item>)
-      //   })}
-      // </ListGroup>
     );
   }
 }

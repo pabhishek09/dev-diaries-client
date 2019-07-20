@@ -7,14 +7,12 @@ const Http = {
 
   get: async ({endpoint, qs}) => {
     let url = apiBaseUrl + endpoint;
-    console.log(url);
     const res = await axios.get(url);
     return res.data;
   }, 
   
   post: async ({endpoint, body}) => {
     let url = apiBaseUrl + endpoint;
-    console.log(url, body);
     const res = await axios.post(url, body);
     return res.data;
   }
