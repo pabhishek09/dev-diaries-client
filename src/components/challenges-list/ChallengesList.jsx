@@ -37,7 +37,7 @@ export default class ChallengesList extends Component {
                           alt="chip-logo"
                         />
                         <span className="count-text">
-                          {challenge.problemCount * 10}
+                          {challenge.problemCount * 30}
                         </span>
                       </div>
                       <div className="col-sm-8 challenge-name-text ">

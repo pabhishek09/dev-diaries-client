@@ -16,7 +16,6 @@ export default class HeaderComp extends Component {
                 <div className="col-sm-6 header-links">
                     <NavLink to="/profile" exact className="navLinkClass" >My Profile</NavLink>
                     <NavLink to="/playground" exact className="navLinkClass">Playground</NavLink>
-                    <NavLink to="/forum" exact className="navLinkClass">Forum</NavLink>
                 </div>
             </header>
         )

@@ -23,7 +23,7 @@ export default class ProblemList extends Component {
                     className="chip-score-img small"
                     alt="chip-logo"
                   />
-                  <span className="count-text small">10</span>{" "}
+                  <span className="count-text small">30</span>{" "}
                 </div>
                 <div className="left col-lg-10">
                   {" "}
