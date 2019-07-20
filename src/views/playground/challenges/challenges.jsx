@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import Http from "../../../utils/http.util";
+import { getProfile } from "../../../utils/profile.util";
 import ChallengesList from "../../../components/challenges-list/ChallengesList";
 import _map from "lodash/map";
 import _find from "lodash/find";
 import Leaderboard from "../../../components/leaderboard/Leaderboard";
 import HeaderComp from "../../../components/header/header";
 import "./challenges.scss";
-import { UserConsumer } from "../../../user-context";
 
 export default class ChallengeComponent extends Component {
   constructor() {
@@ -25,7 +25,8 @@ export default class ChallengeComponent extends Component {
   }
 
   async componentDidMount() {
-    const userId = "5d3018885b96ecf7463a640e";
+    const userProfile = getProfile();
+    const userId = userProfile._id;
     this.getAllChallenges().then(data =>
       this.setState({ allChallenges: data })
     );
@@ -59,8 +60,6 @@ export default class ChallengeComponent extends Component {
 
   render() {
     return (
-      <UserConsumer>
-        {({ user }) => (
           <div>
             <HeaderComp />
             <div className="row challenges">
@@ -68,7 +67,6 @@ export default class ChallengeComponent extends Component {
                 <Leaderboard
                   leaderboard={this.state.leaderboard}
                   userOnLeaderboard={this.state.userOnLeaderboard}
-                  user={user}
                 />
               </div>
               <div className="col-sm-9">
@@ -79,8 +77,6 @@ export default class ChallengeComponent extends Component {
               </div>
             </div>
           </div>
-        )}
-      </UserConsumer>
     );
   }
 }

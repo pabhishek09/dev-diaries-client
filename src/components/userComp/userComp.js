@@ -37,7 +37,7 @@ export default class UserComp extends Component {
               <a className="user-github-link" href={userDetails.html_url}>
                 {userDetails.html_url}
               </a>
-              <img
+              <img 
                 src={require("../../assets/chip.png")}
                 className="chip-img"
                 alt="chip-logo"

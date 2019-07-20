@@ -35,6 +35,7 @@ export default class AttemptProblem extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
+    console.log("NextProps", nextProps);
     problemDetails = nextProps.problemDetails;
     defaultCode = getFnDefaultCode(problemDetails.signature);
     this.setState({problemDetails});
@@ -55,7 +56,7 @@ export default class AttemptProblem extends Component {
   submit () {
       const endpoint = `playground/submit-solution`;
       const body = {
-        userId: '5d3018885b96ecf7463a640e',
+        userId: this.props.userId,
         challengeId: this.props.challengeId,
         name: problemDetails.name,
         problemCount: 1,

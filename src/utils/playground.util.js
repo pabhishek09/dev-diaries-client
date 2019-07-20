@@ -27,6 +27,7 @@ const getFunctionFromSnippet = function(snippet) {
 }
 
 const getFnDefaultCode = (fnSignature) => {
+  console.log(fnSignature);
   let fnParamsDoc = '';
   _forEach(fnSignature.params, (param, index) => {
     fnParamsDoc = fnParamsDoc.concat(`* @param {${param.type}}  ${param.name}  ${param.desc}`);

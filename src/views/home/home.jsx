@@ -27,7 +27,6 @@ export default class HomeComponent extends Component {
         axios.get(`http://localhost:4000/api/user/authenticate?code=${finalAuthCode}`)
             .then(res => {
                 let data = res.data;
-                console.log(data.user[0]);
                 if (data) {
                     this.setState({ userDetails: data.user[0] }
                     )

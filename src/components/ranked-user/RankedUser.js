@@ -1,7 +1,6 @@
 import React from 'react';
 import './RankedUser.scss';
 
-
 const RankedUser = (props) => {
   let imgSrc;
   if (props.info.level === 'Gold') {
