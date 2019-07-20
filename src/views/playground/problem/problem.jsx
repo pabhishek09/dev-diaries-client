@@ -26,7 +26,6 @@ export default class ProblemComponent extends Component {
   async getProblemDetails(challengeId, problemId) {
     const challengeDetailEndpoint = `playground/challenge/${challengeId}`;
     Http.get({endpoint: challengeDetailEndpoint}).then((data) => {
-      console.log("xxxx", data);
       this.setState({problemDetails: _find(data.problems, (problem) => problem._id === problemId), userId: userProfile._id});
     });
   }

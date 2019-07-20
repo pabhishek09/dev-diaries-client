@@ -14,7 +14,7 @@ export default class ProfileComponent extends Component {
     this.state = {};
   }
 
-  componentDidMount(updateUser) {
+  componentDidMount() {
     let githubAuthCode = window.location.href.split("?")[1];
 
     let finalAuthCode = githubAuthCode ? githubAuthCode.split("=")[1] : null;

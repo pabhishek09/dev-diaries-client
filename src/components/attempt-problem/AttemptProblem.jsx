@@ -35,7 +35,6 @@ export default class AttemptProblem extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log("NextProps", nextProps);
     problemDetails = nextProps.problemDetails;
     defaultCode = getFnDefaultCode(problemDetails.signature);
     this.setState({problemDetails});
@@ -66,7 +65,7 @@ export default class AttemptProblem extends Component {
         fnName: problemDetails.signature.fnName
       };
       Http.post({endpoint: endpoint, body}).then((res) => {
-        console.log(`\n \n \n Congratulations! \n \n \n Your score is ${res.score}`);
+        console.log(`\n \n \n Execution Success! \n \n \n Your score is ${res.score}`);
         setTimeout(() => {
           this.setState({score: res.score});
           this.handleShow();
@@ -83,7 +82,7 @@ export default class AttemptProblem extends Component {
       <TerminalWindow submit={this.submit}/>
       </div>
       <Modal show={this.state.show} onHide={this.handleClose}>
-        <Modal.Body>Congratulations, your score is {this.state.score}</Modal.Body>
+        <Modal.Body>Execution Success, your score is {this.state.score}</Modal.Body>
         <Modal.Footer>
           <NavLink to="/playground" exact>Back to challenges</NavLink>
         </Modal.Footer>
