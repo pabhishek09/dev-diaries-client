@@ -3,6 +3,8 @@ import axios from "axios";
 import ChallengesList from "../../components/challenges-list/ChallengesList";
 import HeaderComp from "../../components/header/header";
 import UserComp from "../../components/userComp/userComp";
+import { UserConsumer } from "../../user-context";
+
 import "./profile.scss";
 
 export default class ProfileComponent extends Component {
@@ -13,6 +15,7 @@ export default class ProfileComponent extends Component {
 
   componentDidMount() {
     let githubAuthCode = window.location.href.split("?")[1];
+
     let finalAuthCode = githubAuthCode ? githubAuthCode.split("=")[1] : null;
     if (finalAuthCode) {
     }
@@ -32,18 +35,28 @@ export default class ProfileComponent extends Component {
         console.error("Error -->: ", err);
       });
   }
-
+  dostuff(updateUser) {
+    console.log("triggered");
+    updateUser(this.state.userDetails);
+  }
   render() {
     return (
-      <div>
-        <HeaderComp />
-        <div className="row no-side-margin">
-          <div className="offset-sm-1 col-sm-10 user-info-card">
-            <UserComp userDetails={this.state.userDetails} />
-            <ChallengesList challenges={this.state.allChallenges} />
+      <UserConsumer>
+        {({ updateUser }) => (
+          <div>
+            <HeaderComp />
+            <div className="row no-side-margin">
+              <div className="offset-sm-1 col-sm-10 user-info-card">
+                <UserComp userDetails={this.state.userDetails} />
+                <button onClick={() => this.dostuff(updateUser)}>
+                  Lets get started
+                </button>
+                <ChallengesList challenges={this.state.allChallenges} />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+      </UserConsumer>
     );
   }
 }
