@@ -2,23 +2,23 @@
 
 .login-div {
   background-color: $bg-color;
-  height:100%;
-  flex-direction: column;
+  height: 100%;
+  flex-direction: row;
   justify-content: center;
   .login-logo {
     width: auto;
     height: 354px;
     object-fit: contain;
   }
-  .sign-in-img{
+  .sign-in-img {
     width: auto;
     height: 92px;
     cursor: pointer;
   }
 }
 
-.img-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

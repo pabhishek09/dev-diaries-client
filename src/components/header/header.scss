@@ -1,24 +1,41 @@
 @import "../../variables.scss";
-.appHeader{
-    background-color:$bg-color;
-    padding: 15px;
-    .dev-diaries-logo{
-        width: auto;
-        height: 56px;
-    }
-    .user-img{
-        width:56px;
-        height:56px;
-        border-radius: 30px;
-    }
-    .navLinkClass{
-        color:white;
-        text-decoration: none;
-        margin: 10px;
-        font-size: 24px;
-    }
-    .active{
-        border-bottom: 2px solid $header-text-decoration;
-        padding-bottom: 5px;
-    }
+.header-links {
+  display: flex;
+  align-items: center;
+}
+.appHeader {
+  background-color: $bg-color;
+  padding: 15px;
+  padding-bottom: 0px;
+  .dev-diaries-logo {
+    width: auto;
+    height: 56px;
+  }
+  .user-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 30px;
+  }
+  .navLinkClass {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 21px;
+    padding: 22px 0;
+  }
+  .active {
+    border-bottom: 5px solid;
+    color: #fff;
+    padding-bottom: 17px;
+    border-image: linear-gradient(
+        to right,
+        #dd6d63 30%,
+        #3d484d 10%,
+        #7fcac3 60%
+      )
+      5;
+  }
+}
+.dev-diaries-logo {
+  padding-top: 10px;
 }

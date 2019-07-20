@@ -25,7 +25,7 @@ export default class ChallengesList extends Component {
                     eventKey={index}
                     onClick={() =>
                       this.setState({
-                        down: false
+                        down: !this.state.down
                       })
                     }
                   >
