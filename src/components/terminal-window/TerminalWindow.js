@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Terminal from 'terminal-in-react';
 import { description, commandPassThrough, msg, style } from './TerminalWindowConfig';
 
@@ -14,7 +13,7 @@ const TerminalWindow = (props) => {
   };
 
   return (
-    <div className='col-md-6 terminal-window'>
+    <div className='col-md-5 terminal-window'>
       <Terminal 
         watchConsoleLogging
         commandPassThrough={commandPassThrough}

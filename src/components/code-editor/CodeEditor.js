@@ -13,7 +13,7 @@ const CodeEditor = (props) => {
   };
 
   return (
-    <div className='col-md-6 code-editor'>
+    <div className='col-md-7 code-editor'>
       <CodeMirror
         value={props.code}
         options={{

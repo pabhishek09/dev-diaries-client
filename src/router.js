@@ -11,7 +11,7 @@ import ErrorComponent from './views/errorRoute/error';
 export const history = createBrowserHistory();
 const Routes = () => {
     return (
-        <div className="full-height router-container-div">
+        <div className="container-fluid">
             <Router history={history}>
                 <Switch>
                     <Route path="/login" exact component={LoginComponent}></Route>

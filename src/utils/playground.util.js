@@ -21,26 +21,6 @@ const execute = (code) => {
   }
 };
 
-const evaluate = (code, name, expectations) => {
-  try {
-    const transpiledCode = transpileCode(code);
-    const returnFnSnippet = `return ${name}`;
-    const wrapperFn = getFunctionFromSnippet(transpiledCode.concat(returnFnSnippet));
-    const fnInstance = wrapperFn();
-    expectations.forEach((expectation) => {
-      const output = fnInstance.apply(null, expectation.args);
-      if (expectation.return === output) {
-        console.log('Test case passed for', expectation.args);
-      } else {
-        console.log('Test case failed for', expectation.args);
-      }
-    });
-    return 20;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const getFunctionFromSnippet = function(snippet) {
   // eslint-disable-next-line
   return new Function(snippet);
@@ -74,4 +54,4 @@ function ${fnSignature.fnName} (${fnParamsSignature}) {
   return commentedDoc.concat(fnCode);
 }
 
-export { evaluate, execute, getFnDefaultCode };
+export { execute, getFnDefaultCode };

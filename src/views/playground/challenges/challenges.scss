@@ -1,16 +1,21 @@
 @import "../../../variables.scss";
-.challenges-text{
-    
-    padding-top:20px;
-    padding-bottom: 20px;
-    margin:10px 0px;
-    border-top:3px solid rgba(61,72,77,0.1);
-    border-bottom:3px solid rgba(61,72,77,0.1);
-    .challenge-span{
-        color:$bg-color;
-        font-size:18px;
-        font-weight: bold;
-        border-bottom:2px solid $header-text-decoration;
-        padding-bottom: 5px;
+
+.challenges {
+    display: flex;
+    height: 100%;
+
+    .challenges-text{
+        padding-top:20px;
+        padding-bottom: 20px;
+        margin:10px 0px;
+        border-top:3px solid rgba(61,72,77,0.1);
+        border-bottom:3px solid rgba(61,72,77,0.1);
+        .challenge-span{
+            color:$bg-color;
+            font-size:18px;
+            font-weight: bold;
+            border-bottom:2px solid $header-text-decoration;
+            padding-bottom: 5px;
+        }
     }
 }

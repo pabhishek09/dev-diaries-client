@@ -1,1 +1,61 @@
+@import "../../variables.scss";
 
+.options-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+
+  .problem-details {
+    color: $bg-color;
+
+    .title {
+      display: block;
+      padding-top: 10px;
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.28;
+    }
+
+    .desc {
+      display: block;
+      padding-top: 10px;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+    }
+  }
+  
+  .actions {
+
+    .btn-toolbar {
+      align-items: center;
+
+      .challenges-link {
+        margin-right: 30px;
+      }
+
+      .btn {
+        width: 100px;
+        margin-right: 30px;
+        border-color: transparent;
+      }
+
+      .btn:hover {
+        border-color: transparent;
+      }
+
+      .btn-run {
+        background-color: $btn-primary;
+      }
+      .btn-submit {
+        background-color: $btn-secondary;
+      }
+    }
+  }
+}

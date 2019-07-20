@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.ranked-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 40px;
+  padding: 10px 0;
+  .rank-container {
+    padding: 5px 10px;
+    .rank {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.28;
+      letter-spacing: normal;
+      color: $bg-color
+    }
+  }
+  .badge-container {
+    padding: 0 5px;
+    .user-badge {
+      height: 48px;
+      width: 48px;
+    }
+  }
+
+  .user-info {
+    padding: 5px 10px;
+    .name {
+      display: block;
+      text-align: center;
+    }
+    .score {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+.user-rank {
+  border-bottom: 2px solid $bg-color;
+}

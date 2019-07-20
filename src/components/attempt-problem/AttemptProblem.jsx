@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
+import { NavLink } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
 import OptionsBar from '../options-bar/OptionsBar';
 import CodeEditor from '../code-editor/CodeEditor';
 import TerminalWindow from '../terminal-window/TerminalWindow';
 import Http from '../../utils/http.util';
-import { execute, evaluate, getFnDefaultCode } from '../../utils/playground.util';
+import { execute, getFnDefaultCode } from '../../utils/playground.util';
 import './AttemptProblem.scss';
 
 let codeEditorState;
 let defaultCode;
 let problemDetails;
-let challengeId;
 
 export default class AttemptProblem extends Component {
 
@@ -19,27 +18,26 @@ export default class AttemptProblem extends Component {
     super();
     this.state = {
       show: false,
-      score: 0
+      score: 0,
+      problemDetails: {},
+      redirectToChallenges: false
     };
     this.submit = this.submit.bind(this);
   }
 
+
   handleClose() {
-    this.setState({show: false});
+    this.setState({show: true});
   }
 
   handleShow () {
-    console.log('Handle show called');
-    this.setState({show: true},()=>{
-
-      console.log(this.state.show);
-    });
+    this.setState({show: true});
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     problemDetails = nextProps.problemDetails;
     defaultCode = getFnDefaultCode(problemDetails.signature);
+    this.setState({problemDetails});
   }
 
   handleCodeChange (codeValue) {
@@ -54,19 +52,10 @@ export default class AttemptProblem extends Component {
     }
   };
 
-  loadNextProblem () {
-
-  };
-
-  navigateToChallenges () {
-
-  };
-  
   submit () {
-      // const score = evaluate(codeEditorState, problemDetails.signature.fnName, problemDetails.evaluate);
       const endpoint = `playground/submit-solution`;
       const body = {
-        userId: '5d3018885b96ecf7463a640',
+        userId: '5d3018885b96ecf7463a640e',
         challengeId: this.props.challengeId,
         name: problemDetails.name,
         problemCount: 1,
@@ -88,19 +77,14 @@ export default class AttemptProblem extends Component {
     return (
       <>
       <div className='row attempt-problem'>
-      <OptionsBar run={this.run} submit={this.submit}/>
+      <OptionsBar run={this.run} submit={this.submit} problemDetails={this.state.problemDetails}/>
       <CodeEditor code={defaultCode} onCodeChange={this.handleCodeChange}/>
       <TerminalWindow submit={this.submit}/>
       </div>
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Body>Congratulations, your score is {this.state.score}</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={this.navigateToChallenges}>
-            Back
-          </Button>
-          <Button variant="primary" onClick={this.loadNextProblem}>
-            Next 
-          </Button>
+          <NavLink to="/playground" exact>Back to challenges</NavLink>
         </Modal.Footer>
       </Modal>
       </>

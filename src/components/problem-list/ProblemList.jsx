@@ -15,8 +15,8 @@ export default class ProblemList extends Component {
         {_map(this.props.problems, (problem, index) => {
           return (
             <ListGroup.Item key={index}>
-              <div class="container row">
-                <div class="right col-lg-2">
+              <div className="container row">
+                <div className="right col-lg-2">
                   {" "}
                   <img
                     src={require("../../assets/chip.png")}
@@ -25,7 +25,7 @@ export default class ProblemList extends Component {
                   />
                   <span className="count-text small">10</span>{" "}
                 </div>
-                <div class="left col-lg-10">
+                <div className="left col-lg-10">
                   {" "}
                   <NavLink
                     className="problem-link"
