@@ -1,11 +1,11 @@
-import * as Babel from '@babel/standalone/babel.min';
+import { transform } from '@babel/standalone';
 import _reduce from 'lodash/reduce';
 import _forEach from 'lodash/forEach';
 
 const transpileCode = (str) => {
   let transpiledCode;
   try {
-    transpiledCode = Babel.transform(str, { presets: ['es2015'] }).code;
+    transpiledCode = transform(str, { presets: ['es2015'] }).code;
   } catch (err) {
     console.log('Transpilation error', err);
   }

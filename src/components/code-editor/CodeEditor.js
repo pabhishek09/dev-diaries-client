@@ -19,7 +19,8 @@ const CodeEditor = (props) => {
         options={{
           mode: 'javascript',
           theme: 'material',
-          lineNumbers: true
+          lineNumbers: true,
+          lineWrapping: true
         }}
         onChange={handleCodeChange}/>
     </div>
