@@ -1,9 +1,12 @@
-### TBD
 
-1. Add component library and styles
-2. Write function on editor, execute and show results on terminal
-3. Add test cases configurations 
-4. Add challenges (check feasibility on multiple language support)
-5. finalize user gamification
-6. Full fleged javascript journeys?
+#  FE for [dev-diaries](https://dev-diaries.netlify.com/)
+
+  
+
+## Run project locally
+Run `npm run start` to run the project on the dev environment. 
+
+
+##  Deployment
+FE App is deployed on Netlify.  Auto deployment is enabled when you push code to `master` branch.
 
